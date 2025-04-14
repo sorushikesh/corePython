@@ -4,7 +4,9 @@ Includes creation, indexing, slicing, common operations, and methods.
 """
 
 def string_basics():
-    """Demonstrates basic string creation and indexing."""
+    """Demonstrates basic string creation and indexing.
+    [start : end : step]
+    """
     name = "PythonProgramming"
     print("🔹 Original string:", name)
     print("First character:", name[0])
