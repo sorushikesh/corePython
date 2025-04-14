@@ -1,6 +1,4 @@
 """
-01_lists.py - Python Lists for Backend Devs & ML Engineers
-
   What are Lists?
 - Lists are ordered, mutable (changeable) collections in Python.
 - Used to store multiple values in a single variable.
