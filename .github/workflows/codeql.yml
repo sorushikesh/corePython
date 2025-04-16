@@ -1,4 +1,4 @@
-name: "CodeQL Advanced Scan"
+name: "CodeQL Scan"
 
 on:
   push:
@@ -10,10 +10,11 @@ on:
 
 jobs:
   analyze:
-    name: CodeQL Analyze (${{ matrix.language }})
+    name: Analyze (${{ matrix.language }})
     runs-on: ${{ matrix.language == 'swift' && 'macos-latest' || 'ubuntu-latest' }}
     permissions:
       security-events: write
+      packages: read
       actions: read
       contents: read
       pull-requests: write
@@ -31,16 +32,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python (only if needed)
+      - name: Set up Python (if needed)
         if: matrix.language == 'python'
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: "3.13"
 
-      - name: Install Python dependencies (if any)
+      - name: Install Python dependencies (optional)
         if: matrix.language == 'python'
         run: |
-          pip install -r requirements.txt || true
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
@@ -49,24 +50,7 @@ jobs:
           build-mode: ${{ matrix.build-mode }}
           queries: +security-extended,security-and-quality
 
-      - name: Manual Build (if required)
-        if: matrix.build-mode == 'manual'
-        run: |
-          echo "Insert your build commands here"
-          # For example:
-          # npm install
-          # npm run build
-          # ./gradlew build
-
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         with:
           category: "/language:${{ matrix.language }}"
-          upload: true
-          output: results-${{ matrix.language }}.sarif
-
-      - name: Upload SARIF results to GitHub Security tab
-        if: always()
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: results-${{ matrix.language }}.sarif
