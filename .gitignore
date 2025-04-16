@@ -111,3 +111,4 @@ static/
 *.pdf
 *.xls
 *.xlsx
+/sample.txt
