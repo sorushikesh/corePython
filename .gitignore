@@ -1,39 +1,113 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
-*.iml
-*.ipr
-.idea
+# C extensions
+*.so
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# Distribution / packaging
+.Python
 build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-### VS Code ###
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Pytest cache
+.pytest_cache/
+
+# VS Code and PyCharm
 .vscode/
+.idea/
 
-### Mac OS ###
+# OS files
 .DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# SQLite database (commonly used in Django)
+*.sqlite3
+
+# Django migrations
+**/migrations/
+!**/migrations/__init__.py
+
+# Flask instance folder
+instance/
+.webassets-cache
+
+# Docker-related
+*.log
+docker-compose.override.yml
+.env.docker
+.docker/
+.dockerignore
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Media and static files (Django/Flask generated)
+media/
+staticfiles/
+static/
+
+# Reports
+*.pdf
+*.xls
+*.xlsx
