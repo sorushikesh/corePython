@@ -89,8 +89,8 @@ def file_utils():
     else:
         print("sample.txt does not exist.")
 
-    if not os.path.exists("data"):
-        os.mkdir("data")
+    if not os.path.exists("../data"):
+        os.mkdir("../data")
         print("'data' folder created.")
     print("-" * 40)
 
