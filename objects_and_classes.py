@@ -16,6 +16,7 @@ Why Use OOP?
 # Define a simple class
 class User:
     # Class variable (shared across instances)
+    # It is shared among all instance of a class
     platform = "PythonApp"
 
     # Constructor (called when object is created)
